@@ -15,12 +15,21 @@ npm install --save growl-react-component
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'growl-react-component'
-import 'growl-react-component/dist/index.css'
+import {Growl, useGrowl} from 'growl-react-component'
 
 class Example extends Component {
+ const [active, setActive] = useGrowl()
+
   render() {
-    return <MyComponent />
+    return 
+        (
+        <Growl 
+                onDismissed={() => setActive(false)} 
+                active={active}
+                timer={5000} 
+                message="Hello World!"
+            />
+        )
   }
 }
 ```

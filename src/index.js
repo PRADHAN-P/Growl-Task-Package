@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styles from './styles.module.css'
+import styles from './styles.css'
 
 export const Growl = ({ active, message, onDismissed }) => (
   <div className={`growl${active ? ' active' : ''}`}>
